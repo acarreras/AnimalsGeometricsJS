@@ -53,7 +53,6 @@
                 http://annacarreras.com/animals_geometrics/llop_gran.png,
                 http://annacarreras.com/animals_geometrics/ren_gran.png,
                 http://annacarreras.com/animals_geometrics/foca_gran.png,
-                http://annacarreras.com/animals_geometrics/i20142015.png,
                 http://annacarreras.com/animals_geometrics/titoleng.png";
 */
 
@@ -94,7 +93,7 @@ float dhexagon, drect, dtriangle, dromb, dirregular;
 boolean button = false;
 
 void setup() {
-  size(900,506);
+  size(900, 380);
   colorMode(HSB,360,100,100,100);
   noStroke();
   imageMode(CORNER);
@@ -120,7 +119,6 @@ void setup() {
   rengran = loadImage("http://annacarreras.com/animals_geometrics/ren_gran.png");
   focagran = loadImage("http://annacarreras.com/animals_geometrics/foca_gran.png");
   
-  i20142015 = loadImage("http://annacarreras.com/animals_geometrics/i20142015.png");
   titol = loadImage("http://annacarreras.com/animals_geometrics/titoleng.png");
   
   tileCountX = int(width/figureW);
@@ -136,10 +134,9 @@ void setup() {
 
 void draw(){
   background(0,0,100,100);
-  // println(frameCount);
+  noStroke();
   
   // FORMA
-  // println("form: " + form);
   if(form == 0){ // rect
     drawRectangles();
   }
@@ -158,46 +155,54 @@ void draw(){
   
   // ANIMAL IMATGE
   imageMode(CORNER);
-  // println("animal: " + animal + " at " + frameCount);
-  if(animal == 0){
-    image(pinguinsgran,        565,181,330,280);
+  if (animal == 0) {
+    image(pinguinsgran, 565, 90, 330, 280);
   }
-  else if(animal == 1){
-    image(osgran,        565,181,330,280);
+  else if (animal == 1) {
+    image(osgran, 565, 90, 330, 280);
   }
-  else if(animal == 2){
-    image(llopgran,        565,181,330,280);
+  else if (animal == 2) {
+    image(llopgran, 565, 90, 330, 280);
   }
-  else if(animal == 3){
-    image(rengran,        565,181,330,280);
+  else if (animal == 3) {
+    image(rengran, 565, 90, 330, 280);
   }
-  else if(animal == 4){
-    image(focagran,        565,181,330,280);
+  else if (animal == 4) {
+    image(focagran, 565, 90, 330, 280);
   }
+  
+  fill(0, 0, 100);
+  noStroke();
+  beginShape();
+  vertex(565, 5);
+  vertex(565+330, 5);
+  vertex(565+330, 90);
+  vertex(565, 90);
+  endShape(CLOSE);
+  beginShape();
+  vertex(565, 369);
+  vertex(565+330, 369);
+  vertex(565+330, 375);
+  vertex(565, 375);
+  endShape(CLOSE);
+
   
   // UI
   fill(0,0,100);
   image(titol, 5,5,550,171);
   beginShape();
-    vertex(5,171+5);
-    vertex(5+550,171+5);
-    vertex(5+550,171+5+496-171);
-    vertex(5,171+5+496-171);
+  vertex(5, 171+5);
+  vertex(5+550, 171+5);
+  vertex(5+550, height-5);
+  vertex(5, height-5);
   endShape(CLOSE);
 
   imageMode(CENTER);
   drawIcones(animal);
+  
+  stroke(0, 0, 100);
+  line(560, 0, 560, height); 
 
-  imageMode(CORNER);
-  image(i20142015,        565,5,330,176);
-  fill(0,0,100);
-  noStroke();
-  beginShape();
-    vertex(565,180+280);
-    vertex(565+330,180+280);
-    vertex(565+330,180+280+41);
-    vertex(565,180+280+41);
-  endShape(CLOSE);
 }
 
 // ------------------------------------------------

@@ -5,5 +5,7 @@ Geometrical animals it’s a generative applet to fill text and animal silhouett
 ![animals geometrics](animals_geometrics.png)
 ![animals](animals_geometrics_r3.png)
 ![pinguins](animals_geometrics_r12.png)
+![+animals](animals_geometrics_r4.png)
+![ossos](animals_geometrics_r14.png)
 
 More info at: www.annacarreras.com
